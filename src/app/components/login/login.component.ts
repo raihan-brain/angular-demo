@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginResponse, Signup, SignUpResponse } from 'src/app/models/creds';
 import { SignupService } from 'src/app/services/signup.service';
 
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   });
 
 
-  constructor(private signUpService: SignupService) { }
+  constructor(private signUpService: SignupService,private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
     signUpData.password = formValue.password;
     signUpData.returnSecureToken = true;
     const responseData: LoginResponse = await this.signUpService.doLogin(signUpData).toPromise();
-    console.log(responseData);
+    this.router.navigate(['/coaches']);
 
   }
 

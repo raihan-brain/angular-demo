@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SignupService {
+  loginData: LoginResponse;
 
   constructor(
     private http: HttpClient,
@@ -24,6 +25,14 @@ export class SignupService {
   doLogin(signUpData: Signup): Observable<LoginResponse> {
     const url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCRY2X7teA9kgSC0Zk4bflPaeDOKTNz1ZU';
     return this.http.post<LoginResponse>(url, signUpData);
+  }
+
+  setLoginData(data: LoginResponse): void {
+    this.loginData = data;
+  }
+
+  getLoginData(): LoginResponse {
+    return this.loginData;
   }
 
 }
