@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   });
 
 
-  constructor(private signUpService: SignupService,private router: Router) { }
+  constructor(private signUpService: SignupService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
     signUpData.password = formValue.password;
     signUpData.returnSecureToken = true;
     const responseData: LoginResponse = await this.signUpService.doLogin(signUpData).toPromise();
+    this.signUpService.setLoginData(responseData);
     this.router.navigate(['/coaches']);
 
   }

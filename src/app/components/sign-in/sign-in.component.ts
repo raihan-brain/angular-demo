@@ -13,7 +13,7 @@ export class SignInComponent implements OnInit {
 
 
   form = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(3), this.forbiddenNameValidator(/bob/i)]),
+    name: new FormControl('Avilash', [Validators.required, Validators.minLength(3), this.forbiddenNameValidator(/bob/i)]),
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, this.oneUpperCase]),
   });

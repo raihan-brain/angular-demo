@@ -35,4 +35,10 @@ export class SignupService {
     return this.loginData;
   }
 
+  getCoaches(): Observable<any> {
+    const url = 'https://vue-http-demo-a373b-default-rtdb.firebaseio.com/coaches.json?auth=' + this.loginData.idToken;
+    return this.http.get<any>(url);
+
+  }
+
 }
