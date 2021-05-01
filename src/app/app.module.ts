@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { LoginComponent } from './components/login/login.component';
 import { CoachesComponent } from './components/coaches/coaches.component';
+import { PageNotFoundComponentComponent } from './components/page-not-found-component/page-not-found-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     LoginComponent,
-    CoachesComponent
+    CoachesComponent,
+    PageNotFoundComponentComponent
   ],
   imports: [
     BrowserModule,
