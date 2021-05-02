@@ -9,6 +9,8 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { LoginComponent } from './components/login/login.component';
 import { CoachesComponent } from './components/coaches/coaches.component';
 import { PageNotFoundComponentComponent } from './components/page-not-found-component/page-not-found-component.component';
+import { CoachAComponent } from './components/coaches/coach-a/coach-a.component';
+import { CoachBComponent } from './components/coaches/coach-b/coach-b.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { PageNotFoundComponentComponent } from './components/page-not-found-comp
     SignInComponent,
     LoginComponent,
     CoachesComponent,
-    PageNotFoundComponentComponent
+    PageNotFoundComponentComponent,
+    CoachAComponent,
+    CoachBComponent
   ],
   imports: [
     BrowserModule,

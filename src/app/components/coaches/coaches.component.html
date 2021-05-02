@@ -1,7 +1,17 @@
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 45rem">
   <ul class="list-group list-group-flush" *ngFor="let coach of coaches">
-    <li class="list-group-item">{{coach.firstName}}</li>
-    <li class="list-group-item">{{coach.description}}</li>
-    <li class="list-group-item">{{coach.hourlyRate}}</li>
+    <li class="list-group-item">{{ coach.firstName }}</li>
+    <li class="list-group-item">{{ coach.description }}</li>
+    <li class="list-group-item">{{ coach.hourlyRate }}</li>
   </ul>
+  <h2>First Component</h2>
+
+  <nav>
+    <ul>
+      <li><a routerLink="coachA/1">Child A</a></li>
+      <li><a routerLink="coachB/2">Child B</a></li>
+    </ul>
+  </nav>
+
+  <router-outlet></router-outlet>
 </div>

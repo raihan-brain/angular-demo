@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CoachAComponent } from './components/coaches/coach-a/coach-a.component';
+import { CoachBComponent } from './components/coaches/coach-b/coach-b.component';
 import { CoachesComponent } from './components/coaches/coaches.component';
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponentComponent } from './components/page-not-found-component/page-not-found-component.component';
@@ -9,7 +11,14 @@ const routes: Routes = [
   { path: '', redirectTo: '/sign-up', pathMatch: 'full' },
   { path: 'sign-up', component: SignInComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'coaches', component: CoachesComponent },
+  {
+    path: 'coaches',
+    component: CoachesComponent,
+    children: [
+      { path: 'coachA/:id', component: CoachAComponent },
+      { path: 'coachB/:id', component: CoachBComponent },
+    ],
+  },
   { path: '**', component: PageNotFoundComponentComponent },
 ];
 
