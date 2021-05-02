@@ -21,6 +21,7 @@ const routes: Routes = [
       { path: 'coachB/:id', component: CoachBComponent },
     ],
   },
+  { path: 'orders', loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule) },
   { path: '**', component: PageNotFoundComponentComponent },
 ];
 
