@@ -6,6 +6,7 @@ import { CoachesComponent } from './components/coaches/coaches.component';
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponentComponent } from './components/page-not-found-component/page-not-found-component.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { CoachGuard } from './guards/coach.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/sign-up', pathMatch: 'full' },
@@ -14,6 +15,7 @@ const routes: Routes = [
   {
     path: 'coaches',
     component: CoachesComponent,
+    canActivate: [CoachGuard],
     children: [
       { path: 'coachA/:id', component: CoachAComponent },
       { path: 'coachB/:id', component: CoachBComponent },
